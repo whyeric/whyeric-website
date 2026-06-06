@@ -47,7 +47,7 @@ const projects = [
   {
     name: 'King of the Ring',
     description: 'Motion-controlled boxing game using smartphone sensors. Real-time multiplayer via WebSockets, 3D split-screen arena in Three.js. 1st place at EurekaHacks 2026.',
-    image: 'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/638/043/datas/original.png',
+    image: 'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/637/939/datas/original.png',
     href: 'https://devpost.com/software/king-of-the-ring',
   },
   {
