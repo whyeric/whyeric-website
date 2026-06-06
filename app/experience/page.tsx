@@ -46,16 +46,14 @@ const experiences = [
 const projects = [
   {
     name: 'King of the Ring',
-    badge: '1st Place · EurekaHacks 2026',
-    description: 'Motion-controlled boxing game where players use smartphones as controllers. Real-time multiplayer via WebSockets with a 3D split-screen arena built in Three.js.',
-    tech: ['HTML/CSS/JS', 'Node.js', 'WebSockets', 'Three.js'],
+    description: 'Motion-controlled boxing game using smartphone sensors. Real-time multiplayer via WebSockets, 3D split-screen arena in Three.js. 1st place at EurekaHacks 2026.',
+    image: 'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/638/043/datas/original.png',
     href: 'https://devpost.com/software/king-of-the-ring',
   },
   {
     name: 'Lotus',
-    badge: 'GenAI Genesis 2026',
-    description: 'Platform that transforms books into cinematic trailers within minutes using AI, no technical expertise needed.',
-    tech: ['Next.js', 'FastAPI', 'Google Gemini', 'Supabase'],
+    description: 'Platform that transforms books into cinematic trailers within minutes using AI. Built at GenAI Genesis 2026.',
+    image: 'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/440/586/datas/original.png',
     href: 'https://devpost.com/software/in-progress-w5skda',
   },
 ]
@@ -73,8 +71,8 @@ export default function ExperiencePage() {
           <li key={`${org}-${role}`} className="flex gap-4">
             <OrgLogo src={logo} alt={org} initials={initials} size={44} />
             <div className="min-w-0">
-              <p className="font-semibold text-slate-800">{role}</p>
-              <p className="text-sm text-slate-500">{org} &middot; {period}</p>
+              <p className="font-semibold text-slate-800">{org}</p>
+              <p className="text-sm text-slate-500">{role} &middot; {period}</p>
               <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">{description}</p>
             </div>
           </li>
@@ -85,36 +83,30 @@ export default function ExperiencePage() {
       <div className="my-12 border-t border-blue-100" />
 
       {/* Projects */}
-      <h2 className="text-xl font-bold tracking-tight text-slate-800 mb-6">Projects</h2>
-      <div className="grid gap-4 sm:grid-cols-2">
-        {projects.map(({ name, badge, description, tech, href }) => (
-          <a
-            key={name}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-xl border border-blue-100 bg-white p-5 hover:bg-blue-50 transition-colors group"
-          >
-            <div className="flex items-start justify-between gap-2 mb-2">
-              <h3 className="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
-                {name}
-              </h3>
-              <span className="text-xs text-blue-500 bg-blue-50 border border-blue-100 rounded-full px-2 py-0.5 whitespace-nowrap flex-shrink-0">
-                {badge}
-              </span>
+      <p className="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Projects</p>
+      <div className="grid gap-8 sm:grid-cols-2">
+        {projects.map(({ name, description, image, href }) => (
+          <div key={name}>
+            <a href={href} target="_blank" rel="noopener noreferrer" className="block group">
+              <img
+                src={image}
+                alt={name}
+                className="w-full aspect-video object-cover rounded-lg mb-3 group-hover:opacity-90 transition-opacity"
+              />
+            </a>
+            <div className="flex items-start justify-between gap-2">
+              <p className="font-semibold text-slate-800">{name}</p>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-slate-400 underline decoration-dotted underline-offset-2 hover:text-blue-500 transition-colors flex-shrink-0 mt-0.5"
+              >
+                devpost
+              </a>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed mb-3">{description}</p>
-            <div className="flex flex-wrap gap-1.5">
-              {tech.map((t) => (
-                <span
-                  key={t}
-                  className="text-xs text-slate-500 bg-slate-50 border border-slate-100 rounded px-2 py-0.5"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </a>
+            <p className="text-sm text-slate-500 mt-1 leading-relaxed">{description}</p>
+          </div>
         ))}
       </div>
     </section>

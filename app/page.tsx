@@ -5,18 +5,27 @@ const highlights = [
   {
     logo: '/logos/eurekahacks_logo.jpg',
     initials: 'EH',
-    text: <>1st Place @ <a href="https://devpost.com/software/king-of-the-ring" target="_blank" rel="noopener noreferrer" className="text-slate-600 underline decoration-dotted underline-offset-2 hover:text-blue-500 transition-colors">EurekaHacks 2026</a>, built King of the Ring, a motion-controlled multiplayer boxing game.</>,
+    role: '1st Place',
+    org: 'EurekaHacks 2026',
+    orgUrl: 'https://devpost.com/software/king-of-the-ring',
+    description: 'built King of the Ring, a motion-controlled multiplayer boxing game.',
   },
   {
     logo: '/logos/cutc_logo.jpg',
     initials: 'CUTC',
-    text: <>Finance Lead @ <a href="https://cutc.ca/" target="_blank" rel="noopener noreferrer" className="text-slate-600 underline decoration-dotted underline-offset-2 hover:text-blue-500 transition-colors">CUTC Foundation</a>, Canada&apos;s largest undergraduate tech conference, managing $80K in funds.</>,
+    role: 'Finance Lead',
+    org: 'CUTC Foundation',
+    orgUrl: 'https://cutc.ca/',
+    description: "Canada's largest undergraduate tech conference, managing $80K in funds.",
   },
   {
     logo: '/logos/hack404_logo.jpg',
     initials: 'H404',
-    text: <>Logistics Organizer @ <a href="https://hack404.dev/" target="_blank" rel="noopener noreferrer" className="text-slate-600 underline decoration-dotted underline-offset-2 hover:text-blue-500 transition-colors">Hack404</a>, 36-hour hackathon at UofT with 200+ participants, raising $25K in sponsorships.</>,
-  }
+    role: 'Logistics Organizer',
+    org: 'Hack404',
+    orgUrl: 'https://hack404.dev/',
+    description: '36-hour hackathon at UofT with 200+ participants, raising $25K in sponsorships.',
+  },
 ]
 
 const socials = [
@@ -31,7 +40,7 @@ export default function Home() {
     <section className="max-w-3xl mx-auto px-6 py-20">
       <div className="flex items-baseline justify-between">
         <h1 className="text-4xl font-bold tracking-tight text-slate-800">
-          Eric Wang
+          Eric (Hong Yi) Wang
         </h1>
         <div className="flex items-center gap-4">
           {socials.map(({ label, href }) => (
@@ -59,13 +68,35 @@ export default function Home() {
       </p>
 
       <ul className="mt-3 space-y-3">
-        {highlights.map(({ logo, initials, href, text }, i) => (
-          <li key={i} className="flex items-start gap-2 text-slate-500">
-            <InlineLogo src={logo} alt={initials} initials={initials} />
-            <span className="text-base leading-snug">{text}</span>
+        {highlights.map(({ logo, initials, role, org, orgUrl, description }) => (
+          <li key={org} className="flex items-start gap-2">
+            <InlineLogo src={logo} alt={org} initials={initials} />
+            <div>
+              <p className="text-base text-slate-600 leading-snug">
+                {role} @{' '}
+                <a
+                  href={orgUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-dotted underline-offset-2 hover:text-blue-500 transition-colors"
+                >
+                  {org}
+                </a>
+              </p>
+              <p className="text-sm text-slate-400 mt-0.5">{description}</p>
+            </div>
           </li>
         ))}
       </ul>
+
+      <div className="mt-10">
+        <Link
+          href="/experience"
+          className="text-sm text-blue-500 hover:text-blue-600 font-medium transition-colors"
+        >
+          View my experience &rarr;
+        </Link>
+      </div>
     </section>
   )
 }
