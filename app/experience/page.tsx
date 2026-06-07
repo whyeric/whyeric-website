@@ -10,7 +10,7 @@ const experiences = [
     description: 'Manage $80K in funds for Canada\'s largest student-run tech conference, reaching 3K students per year.',
   },
   {
-    logo: '/logos/algorithmalchemsits_logo.png',
+    logo: '/logos/algorithmalchemists_logo.png',
     initials: 'AA',
     org: 'Algorithm Alchemists',
     role: 'President & Founder',
