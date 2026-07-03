@@ -3,12 +3,20 @@ import { InlineLogo } from '@/components/InlineLogo'
 
 const highlights = [
   {
+    logo: 'https://media.licdn.com/dms/image/v2/D560BAQE-QwSN8wdlKw/company-logo_100_100/B56Z5mdIcAIsAI-/0/1779835373524/foundersinc_logo?e=1784764800&v=beta&t=8hOfyOZchMRUZCKDnAzdvWmRqku3jhLcBzLM8GVbXms',
+    initials: 'FI',
+    role: 'Founder in Residence',
+    org: 'Founders, Inc.',
+    orgUrl: 'https://f.inc/',
+    description: 'Selected as one of 100 builders for Founders Inc. Off Season II in SF. Received $50K in compute credits.',
+  },
+  {
     logo: '/logos/eurekahacks_logo.jpg',
     initials: 'EH',
     role: '1st Place',
     org: 'EurekaHacks 2026',
     orgUrl: 'https://devpost.com/software/king-of-the-ring',
-    description: 'built King of the Ring, a motion-controlled multiplayer boxing game.',
+    description: 'Built King of the Ring, a motion-controlled multiplayer boxing game.',
   },
   {
     logo: '/logos/cutc_logo.jpg',
