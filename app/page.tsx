@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       <p className="mt-3 text-lg text-slate-500">
-        CS &amp; Economics at{' '}
+        CS &amp; Mathematics at{' '}
         <InlineLogo src="/logos/yale_logo.png" alt="Yale University" initials="Y" />
         {' '}Yale.
       </p>

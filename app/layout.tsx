@@ -3,8 +3,8 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Eric (Hong Yi) Wang",
-  description: "Personal website of Eric Wang, CS & Economics at Yale.",
+  title: "Eric Wang",
+  description: "Personal website of Eric (Hong Yi) Wang, CS & Mathematics at Yale.",
 };
 
 export default function RootLayout({
