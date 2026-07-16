@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Eric Wang",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <footer className="border-t border-blue-100 py-6 text-center text-sm text-slate-400">
           © {new Date().getFullYear()} whyeric2020@gmail.com
         </footer>
+        <Analytics />
       </body>
     </html>
   );
